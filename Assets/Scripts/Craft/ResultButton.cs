@@ -11,12 +11,12 @@ public class ResultButton : MonoBehaviour
     public Inventory Inventory;
    public List<int> dublicat = new List<int>();
 public GameObject craftObject; 
-public GameObject canvas; //на канвале лежит скрипт, который отвечает за открытие/закрытие крафта
+public GameObject TableCraftObject; //на канвале лежит скрипт, который отвечает за открытие/закрытие крафта
 
 
 void Start() 
 {
- canvas = GameObject.Find("Canvas");
+ TableCraftObject = GameObject.Find("TableCraft");
 }
 
 
@@ -49,7 +49,7 @@ int index = Inventory.items.FindIndex(x => x.id == id);
 Inventory.AddPredmet(Inventory.DataBase.predmets[index2]);
 
 
-canvas.GetComponent<OpenCloseCraft>().UpdateCraft();
+TableCraftObject.GetComponent<OpenCloseCraft>().UpdateCraft();
 
 
 

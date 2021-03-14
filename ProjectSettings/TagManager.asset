@@ -13,6 +13,7 @@ TagManager:
   - Head
   - Friend
   - Drop
+  - TableCraft
   layers:
   - Default
   - TransparentFX
