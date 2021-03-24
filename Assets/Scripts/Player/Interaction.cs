@@ -39,17 +39,21 @@ else if (other.tag == "Drop") {
 
 
 
-void Update() {
-                if (Input.GetKeyDown(KeyCode.E)) {
-                   if (ObjectInteraction != null) { //если есть объект взаимодействия
-                      if (ObjectInteraction.GetComponent<Act>() != null) { //если у объекта есть метод действия
-                      ObjectInteraction.GetComponent<Act>().ActVoid(); //вызываем метод действия
-                     act.text = "";
-                   }
-                }
-                }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        if (ObjectInteraction != null)
+    //        { //если есть объект взаимодействия
+    //            if (ObjectInteraction.GetComponent<Act>() != null)
+    //            { //если у объекта есть метод действия
+    //                ObjectInteraction.GetComponent<Act>().ActVoid(); //вызываем метод действия
+    //                act.text = "";
+    //            }
+    //        }
+    //    }
 
-}
+    //}
 
 
 
