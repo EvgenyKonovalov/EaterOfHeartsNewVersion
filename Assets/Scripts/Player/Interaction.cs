@@ -20,6 +20,14 @@ act.text = "Нажмите [E], чтобы поговорить";
           ObjectInteraction = other.gameObject;
 act.text = "Нажмите [E], чтобы подобрать предмет";
  }
+
+
+else if (other.tag == "TableCraft") {
+          ObjectInteraction = other.gameObject;
+act.text = "Нажмите [E], чтобы открыть меню крафта";
+ }
+
+
 }
 
    public void OnTriggerExit(Collider other) {
@@ -35,7 +43,13 @@ else if (other.tag == "Drop") {
     act.text = "";
  ObjectInteraction = null;
 }
+
+else if (other.tag == "TableCraft") {
+    act.text = "";
+ObjectInteraction.GetComponent<OpenCloseCraft>().CloseCraft();
+ ObjectInteraction = null;
 }
+   }
 
 
 
@@ -55,6 +69,25 @@ else if (other.tag == "Drop") {
 
     //}
 
+void Update() {
+
+
+
+                if (Input.GetKeyDown(KeyCode.E)) {
+                   if (ObjectInteraction != null) { //если есть объект взаимодействия
+                      if (ObjectInteraction.GetComponent<Act>() != null) { //если у объекта есть метод действия
+                      ObjectInteraction.GetComponent<Act>().ActVoid(); //вызываем метод действия
+                     act.text = "";
+                   }
+                }
+                }
+
+
+
 
 
 }
+
+
+   }
+
